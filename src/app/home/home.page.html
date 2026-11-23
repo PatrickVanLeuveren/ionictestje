@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary"><ion-title>Home</ion-title></ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <p>Fill in the form. The data is sent to the next page through <strong>router state</strong>, so the URL will only be <code>/details</code>.</p>
+  <ion-list>
+    <ion-item>
+      <ion-input label="Name" labelPlacement="stacked" [(ngModel)]="name" placeholder="Your name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea label="Message" labelPlacement="stacked" [(ngModel)]="message" placeholder="Something private"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" class="ion-margin-top" [disabled]="!name.trim()" (click)="send()">Go to details</ion-button>
+  <ion-note class="ion-padding-top" style="display:block">A random secret code is generated and sent along too.</ion-note>
+</ion-content>
